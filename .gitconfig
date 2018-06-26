@@ -1,0 +1,48 @@
+[filter "media"]
+	required = true
+	clean = git media clean %f
+	smudge = git media smudge %f
+[user]
+	email = daniloprates@gmail.com
+	name = Danilo Prates
+[push]
+	default = current
+[filter "hawser"]
+	clean = git hawser clean %f
+	smudge = git hawser smudge %f
+	required = true
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+[alias]
+	slog = log --all --decorate --oneline
+	al = config --get-regexp alias
+	a = add
+	ac = !git add -A && git commit
+	co = checkout
+	b = branch
+	c = commit
+	ci = commit
+	pl = pull
+	p = pull
+	pr = pull --rebase
+	ps = push
+	ph = push
+	c = commit
+	s = status
+	l = log
+	cfg = config
+	st = stash
+	stn = stash save
+	sshow = "!f() { git stash show stash^{/$*} -p; }; f"
+	sapply = "!f() { git stash apply stash^{/$*}; }; f"
+[core]
+	excludesfile = /Users/danilo/.gitignore_global
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true

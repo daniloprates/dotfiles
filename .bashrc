@@ -1,0 +1,26 @@
+export PATH=$PATH:/usr/local/bin
+export HOSTSPATH=/Users/danilo/hosts
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+
+# linux console colors -------------------------------------
+if [ "$TERM" = "linux" ]; then
+     echo -en "\e]P0000000" #black
+     echo -en "\e]P8505354" #darkgrey
+     echo -en "\e]P1f92672" #darkred
+     echo -en "\e]P9ff5995" #red
+     echo -en "\e]P282b414" #darkgreen
+     echo -en "\e]PAb6e354" #green
+     echo -en "\e]P3fd971f" #brown
+     echo -en "\e]PBfeed6c" #yellow
+     echo -en "\e]P456c2d6" #darkblue
+     echo -en "\e]PC8cedff" #blue
+     echo -en "\e]P58c54fe" #darkmagenta
+     echo -en "\e]PD9e6ffe" #magenta
+     echo -en "\e]P6465457" #darkcyan
+     echo -en "\e]PE899ca1" #cyan
+     echo -en "\e]P7ccccc6" #lightgrey
+     echo -en "\e]PFf8f8f2" #white
+     clear # back to default input colours
+fi
+# ------------------------------------------------------------
